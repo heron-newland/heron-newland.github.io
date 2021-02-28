@@ -6,7 +6,7 @@
 # Site
 title: It Inns
 subtitle:
-description:
+description: 活到老学到老。
 author: Heron
 email: objc_china@163.com
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
@@ -77,7 +77,7 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/avatar.png
+favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hello, Heron"
@@ -85,7 +85,7 @@ keywords: "Hello, Heron"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-#rss:
+rss: false
 
 # Specify the date when the site was setup
 #since: 2015
@@ -123,8 +123,8 @@ menu:
   about: /about/
   archives: /archives/
   tags: /tags/
-  #sitemap: /sitemap.xml
-  #commonweal: /404.html
+  sitemap: /sitemap.xml
+  commonweal: /404.html
 
 
 # Enable/Disable menu icons.
@@ -214,9 +214,10 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
-
+   GitHub: https://github.com/heron-newland
+   E-Mail: mailto:objc_china@163.com
 
 # Social Links Icons
 # Icon Mapping:
@@ -227,14 +228,14 @@ social_icons:
   enable: true
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
-  GitHub: https://github.com/heron-newland
+  GitHub: github
   # Twitter: twitter
   # Weibo: weibo
-
+  E-Mail: envelope
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-#avatar:
+avatar: assets/avatar.png
 
 
 # Table Of Contents in the Sidebar
@@ -257,8 +258,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  position: left
-  #position: right
+  #position: left
+  position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -279,7 +280,6 @@ sidebar:
 
   # Scroll percent label in b2t button
   scrollpercent: false
-
 
 # Blog rolls
 #links_title: Links
@@ -587,7 +587,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
