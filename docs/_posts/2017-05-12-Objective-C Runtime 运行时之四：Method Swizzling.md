@@ -17,48 +17,79 @@ tags:
 
 `Method Swizzling`是改变一个`selector`的实际实现的技术。通过这一技术，我们可以在运行时通过修改类的分发表中`selector`对应的函数，来修改方法的实现。
 
-例如，我们想跟踪在程序中每一个view controller展示给用户的次数：当然，我们可以在每个view controller的`viewDidAppear`中添加跟踪代码；但是这太过麻烦，需要在每个view controller中写重复的代码。创建一个子类可能是一种实现方式，但需要同时创建`UIViewController`, `UITableViewController`, `UINavigationController`及其它`UIKit`中view controller的子类，这同样会产生许多重复的代码。
+例如，我们想跟踪在程序中每一个`view controller`展示给用户的次数：当然，我们可以在每个view controller的`viewDidAppear`中添加跟踪代码；但是这太过麻烦，需要在每个view controller中写重复的代码。创建一个子类可能是一种实现方式，但需要同时创建`UIViewController`, `UITableViewController`, `UINavigationController`及其它`UIKit`中view controller的子类，这同样会产生许多重复的代码。
 
 这种情况下，我们就可以使用Method Swizzling，如在代码所示：
 
 
 	#import <objc/runtime.h>
+	
 	@implementation UIViewController (Tracking)
+	
 	+ (void)load {
 	    static dispatch_once_t onceToken;
 	    dispatch_once(&onceToken, ^{
-	        Class class = [self class];         
-	        // When swizzling a class method, use the following:
-	        // Class class = object_getClass((id)self);
+	        Class class = [self class];
+	
 	        SEL originalSelector = @selector(viewWillAppear:);
 	        SEL swizzledSelector = @selector(xxx_viewWillAppear:);
+	
 	        Method originalMethod = class_getInstanceMethod(class, originalSelector);
 	        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-	        BOOL didAddMethod = class_addMethod(class,
-	                swizzledSelector,
-	                method_getImplementation(swizzledMethod),
-	                method_getTypeEncoding(swizzledMethod));
-	        if (didAddMethod) {
-	            class_replaceMethod(class,
+	
+	        // When swizzling a class method, use the following:
+	        // Class class = object_getClass((id)self);
+	        …
+	        // Method originalMethod = class_getClassMethod(class, originalSelector);
+	        // Method swizzledMethod = class_getClassMethod(class, swizzledSelector);
+	
+	        BOOL didAddMethod =
+	            class_addMethod(class,
 	                originalSelector,
 	                method_getImplementation(swizzledMethod),
 	                method_getTypeEncoding(swizzledMethod));
+	
+	        if (didAddMethod) {
+	            class_replaceMethod(class,
+	                swizzledSelector,
+	                method_getImplementation(originalMethod),
+	                method_getTypeEncoding(originalMethod));
 	        } else {
 	            method_exchangeImplementations(originalMethod, swizzledMethod);
 	        }
 	    });
 	}
+	
 	#pragma mark - Method Swizzling
+	
 	- (void)xxx_viewWillAppear:(BOOL)animated {
 	    [self xxx_viewWillAppear:animated];
 	    NSLog(@"viewWillAppear: %@", self);
 	}
+	
 	@end
 
+上面的代码先尝试添加原 selector 是为了做一层保护，因为如果这个类没有实现原始方法"originalSel" ，但其父类实现了，那 class_getInstanceMethod 会返回父类的方法。这样 method_exchangeImplementations 替换的是父类的那个方法，这当然不是你想要的。所以我们先尝试添加 originalSel ，如果已经存在，再用 method_exchangeImplementations 把原方法的实现跟新的方法实现给交换掉。
 
-在这里，尝试先调用class_addMethod方法,以保证即便originalSelector只在父类中实现,也能达到Method Swizzling的目的.我们通过`method swizzling`修改了`UIViewController`的`@selector(viewWillAppear:)`对应的函数指针，使其实现指向了我们自定义的`xxx_viewWillAppear`的实现。这样，当`UIViewController`及其子类的对象调用`viewWillAppear`时，都会打印一条日志信息。
+很多文章中方法交换直接使用
 
-上面的例子很好地展示了使用method swizzling来一个类中注入一些我们新的操作。当然，还有许多场景可以使用method swizzling，在此不多举例。在此我们说说使用method swizzling需要注意的一些问题：
+```objective-c
+  Method originalMethod = class_getInstanceMethod(class, originalSelector);
+  Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);    
+  method_exchangeImplementations(originalMethod, swizzledMethod);
+```
+
+以上代码看起来米有什么问题， 但是当子类没有实现originalMethod，而是只有父类实现了`originalMethod`时，此时交换的交换之后就变成了父类某个方法和子类的某个方法交换，那么使用父类调用子类方法是有问题的。
+
+首先，前面我们已经讲解了`selector, method, implementation` 这三个概念之间关系的最好方式是：在运行时，类（Class）维护了一个消息分发列表来解决消息的正确发送。每一个消息列表的入口是一个方法（Method），这个方法映射了一对键值对，其中键值是这个方法的名字 selector（SEL），值是指向这个方法实现的函数指针` implementation（IMP）`。 `Method swizzling `修改了类的消息分发列表使得已经存在的 selector 映射了另一个实现` implementation`，同时重命名了原生方法的实现为一个新的 `selector`。
+
+假设父类有个方法`method`，子类未重写method方法，子类的中想要拿来替换的方法为swizzledMethod。
+
+如果只是单纯的使用`method_exchangeImplementations`进行方法交换, 在子类的实例中调用method方法时，确实按预期正常运行的,在父类的实例中调用method方法时，就开始崩溃了。因为方法交换后，method方法的IMP其实和子类swizzledMethod的IMP进行了交换，此时等同于父类调用子类方法，当然会崩溃。
+
+那么使用 `class_addMethod`先判断了子类中是否有method方法,如果有，则添加失败，直接进行交换,如果没有，则添加成功，将`swizzledMethod`的`IMP`赋值给`method`这个`Selector`，然后在将`method`的`IMP`（其实是父类中的实现）赋值给`swizzledMethod`这个`Selector`。
+
+上面的例子很好地展示了使用`method swizzling`来一个类中注入一些我们新的操作。当然，还有许多场景可以使用`method swizzling`，在此不多举例。在此我们说说使用`method swizzling`需要注意的一些问题：
 
 ## Swizzling应该总是在+load中执行
 
