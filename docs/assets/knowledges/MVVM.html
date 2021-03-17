@@ -1,0 +1,1586 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>MVVM | iOS面试宝典</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.6">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./frame与bounds.html" />
+    
+    
+    <link rel="prev" href="./描述什么是MVC.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.2"
+        data-chapter-title="MVVM"
+        data-filepath="MVVM.md"
+        data-basepath="."
+        data-revision="Sun Mar 13 2016 11:36:35 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="C语言部分.html">
+            
+                
+                    <a href="./C语言部分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        C语言部分
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="static_关键字的作用.html">
+            
+                
+                    <a href="./static_关键字的作用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        static 关键字的作用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="堆和栈的区别.html">
+            
+                
+                    <a href="./堆和栈的区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        堆和栈的区别
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="c语言如何判断两个单向无环链表是否相交.html">
+            
+                
+                    <a href="./c语言如何判断两个单向无环链表是否相交.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        c语言如何判断两个单向无环链表是否相交
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="引用与指针有什么区别.html">
+            
+                
+                    <a href="./引用与指针有什么区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        引用与指针有什么区别
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="OC语言部分.html">
+            
+                
+                    <a href="./OC语言部分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        OC语言部分
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="谈谈obj-c的优缺点？.html">
+            
+                
+                    <a href="./谈谈obj-c的优缺点？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        谈谈obj-c的优缺点？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Objective-C有多继承吗？没有的话用什么代替.html">
+            
+                
+                    <a href="./Objective-C有多继承吗？没有的话用什么代替.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Objective-C有多继承吗？没有的话用什么代替
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="Objective-C有私有方法吗？私有变量呢？.html">
+            
+                
+                    <a href="./Objective-C有私有方法吗？私有变量呢？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Objective-C有私有方法吗？私有变量呢？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="定义属性时，什么情况使用copy、assign、retain.html">
+            
+                
+                    <a href="./定义属性时，什么情况使用copy、assign、retain.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        定义属性时，什么情况使用copy、assign、retain
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="单例模式的书写.html">
+            
+                
+                    <a href="./单例模式的书写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        单例模式的书写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="类别和继承.html">
+            
+                
+                    <a href="./类别和继承.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        类别的作用?继承和类别在实现中有何区别?
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="什么是nsmanagedobject模型.html">
+            
+                
+                    <a href="./什么是nsmanagedobject模型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        什么是nsmanagedobject模型?
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="什么是谓词.html">
+            
+                
+                    <a href="./什么是谓词.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        什么是谓词?
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="C和obj-c如何混用.html">
+            
+                
+                    <a href="./C和obj-c如何混用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        C和obj-c如何混用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="内存管理问题合集.html">
+            
+                
+                    <a href="./内存管理问题合集.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        内存管理问题合集
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="对象是什么时候被释放的.html">
+            
+                
+                    <a href="./对象是什么时候被释放的.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        对象是什么时候被释放的
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="为什么很多内置的类，如TableView的delegate的属性是assign不是retain.html">
+            
+                
+                    <a href="./为什么很多内置的类，如TableView的delegate的属性是assign不是retain.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        为什么很多内置的类，如TableView的delegate的属性是assign不是retain
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="关键字const什么含义？.html">
+            
+                
+                    <a href="./关键字const什么含义？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        关键字const什么含义？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="atomic.html">
+            
+                
+                    <a href="./atomic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.14.</b>
+                        
+                        原子(atomic)跟非原子(non-atomic)属性有什么区别?
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="public_private_protected.html">
+            
+                
+                    <a href="./public_private_protected.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.15.</b>
+                        
+                        public_private_protected
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="常见的objective-c的数据类型有哪些，和c的基本类型有什么区别.html">
+            
+                
+                    <a href="./常见的objective-c的数据类型有哪些，和c的基本类型有什么区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.16.</b>
+                        
+                        常见的objective-c的数据类型有哪些，和c的基本类型有什么区别
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="C++和OC，JAVA和OC之间的区别？.html">
+            
+                
+                    <a href="./C++和OC，JAVA和OC之间的区别？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.17.</b>
+                        
+                        C++和OC，JAVA和OC之间的区别？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="id、nil代表什么？.html">
+            
+                
+                    <a href="./id、nil代表什么？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.18.</b>
+                        
+                        id、nil代表什么？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="nil与NULL的区别？.html">
+            
+                
+                    <a href="./nil与NULL的区别？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.19.</b>
+                        
+                        nil与NULL的区别？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="import、include、class区别.html">
+            
+                
+                    <a href="./import、include、class区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.20.</b>
+                        
+                        import、include、class区别
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="@property修饰符.html">
+            
+                
+                    <a href="./@property修饰符.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.21.</b>
+                        
+                        @property修饰符
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="你了解的设计模式.html">
+            
+                
+                    <a href="./你了解的设计模式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.22.</b>
+                        
+                        你了解的设计模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="ARC是什么.html">
+            
+                
+                    <a href="./ARC是什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.23.</b>
+                        
+                        ARC是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="ARC通过什么方式帮助开发者管理内存.html">
+            
+                
+                    <a href="./ARC通过什么方式帮助开发者管理内存.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.24.</b>
+                        
+                        ARC通过什么方式帮助开发者管理内存
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="CAAnimation的层级结构.html">
+            
+                
+                    <a href="./CAAnimation的层级结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.25.</b>
+                        
+                        CAAnimation的层级结构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="iOS本地数据存储都有哪几种方式.html">
+            
+                
+                    <a href="./iOS本地数据存储都有哪几种方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.26.</b>
+                        
+                        iOS本地数据存储都有哪几种方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="深拷贝和浅拷贝的理解.html">
+            
+                
+                    <a href="./深拷贝和浅拷贝的理解.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.27.</b>
+                        
+                        深拷贝和浅拷贝的理解
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="什么是序列化和反序列化，可以用来做什么？.html">
+            
+                
+                    <a href="./什么是序列化和反序列化，可以用来做什么？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.28.</b>
+                        
+                        什么是序列化和反序列化，可以用来做什么？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="什么是懒加载.html">
+            
+                
+                    <a href="./什么是懒加载.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.29.</b>
+                        
+                        什么是懒加载
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="self.跟self-&gt;什么区别？.html">
+            
+                
+                    <a href="./self.跟self-&gt;什么区别？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.30.</b>
+                        
+                        self.跟self-&gt;什么区别？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="objc中的类方法和实例方法有什么本质区别和联系？.html">
+            
+                
+                    <a href="./objc中的类方法和实例方法有什么本质区别和联系？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.31.</b>
+                        
+                        objc中的类方法和实例方法有什么本质区别和联系？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="iOS中的事件的传递_响应链.html">
+            
+                
+                    <a href="./iOS中的事件的传递_响应链.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.32.</b>
+                        
+                        iOS中的事件的传递:响应链
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="block使用注意点.html">
+            
+                
+                    <a href="./block使用注意点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.33.</b>
+                        
+                        block使用注意点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="类别_继承_拓展.html">
+            
+                
+                    <a href="./类别_继承_拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.34.</b>
+                        
+                        类别_继承_拓展
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.35" data-path="OC协议和JAVA接口.html">
+            
+                
+                    <a href="./OC协议和JAVA接口.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.35.</b>
+                        
+                        OC协议和JAVA接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.36" data-path="单例的理解和使用.html">
+            
+                
+                    <a href="./单例的理解和使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.36.</b>
+                        
+                        单例的理解和使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.37" data-path="KVC和KVO.html">
+            
+                
+                    <a href="./KVC和KVO.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.37.</b>
+                        
+                        KVC和KVO
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.38" data-path="kvo、kvo的使用场景.html">
+            
+                
+                    <a href="./kvo、kvo的使用场景.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.38.</b>
+                        
+                        kvo、kvo的使用场景
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.39" data-path="多人开发内存泄露的检查.html">
+            
+                
+                    <a href="./多人开发内存泄露的检查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.39.</b>
+                        
+                        多人开发内存泄露的检查
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="UI部分.html">
+            
+                
+                    <a href="./UI部分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        UI部分
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="描述什么是MVC.html">
+            
+                
+                    <a href="./描述什么是MVC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        描述什么是MVC
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="MVVM.html">
+            
+                
+                    <a href="./MVVM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        MVVM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="frame与bounds.html">
+            
+                
+                    <a href="./frame与bounds.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        frame与bounds
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="blockweak修饰符的区别.html">
+            
+                
+                    <a href="./blockweak修饰符的区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        __block/weak修饰符的区别
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="awakeFromNib与viewDidLoad区别.html">
+            
+                
+                    <a href="./awakeFromNib与viewDidLoad区别.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        awakeFromNib与viewDidLoad区别
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="UIViewController的生命周期方法调用顺序.html">
+            
+                
+                    <a href="./UIViewController的生命周期方法调用顺序.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        UIViewController的生命周期方法调用顺序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="ViewController的loadView、init等方法的调用.html">
+            
+                
+                    <a href="./ViewController的loadView、init等方法的调用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        ViewController的loadView、init等方法的调用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="UITableView的执行流程是怎么样的.html">
+            
+                
+                    <a href="./UITableView的执行流程是怎么样的.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        UITableView的执行流程是怎么样的
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="LayoutSubviews何时会被调用.html">
+            
+                
+                    <a href="./LayoutSubviews何时会被调用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        LayoutSubviews何时会被调用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="应用程序按Home键进入后台时的生命周期.html">
+            
+                
+                    <a href="./应用程序按Home键进入后台时的生命周期.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        应用程序按Home键进入后台时的生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="ViewController的didReceiveMemoryWarning是在什么时候调用的？默认的操作是什么.html">
+            
+                
+                    <a href="./ViewController的didReceiveMemoryWarning是在什么时候调用的？默认的操作是什么.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                        ViewController的didReceiveMemoryWarning是在什么时候调用的？默认的操作是什么
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="tableview的性能优化.html">
+            
+                
+                    <a href="./tableview的性能优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.12.</b>
+                        
+                        tableview的性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="tableview的重用机制.html">
+            
+                
+                    <a href="./tableview的重用机制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.13.</b>
+                        
+                        tableview的重用机制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="iOS之事件的传递和响应机制.html">
+            
+                
+                    <a href="./iOS之事件的传递和响应机制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.14.</b>
+                        
+                        iOS之事件的传递和响应机制
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="网络部分.html">
+            
+                
+                    <a href="./网络部分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        网络部分
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="http的post与get区别与联系.html">
+            
+                
+                    <a href="./http的post与get区别与联系.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        http的post与get区别与联系
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="oauth授权.html">
+            
+                
+                    <a href="./oauth授权.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        OAuth授权
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="多线程部分.html">
+            
+                
+                    <a href="./多线程部分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        多线程部分
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="线程与进程的区别和联系.html">
+            
+                
+                    <a href="./线程与进程的区别和联系.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        线程与进程的区别和联系
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="对多线程开发的理解.html">
+            
+                
+                    <a href="./对多线程开发的理解.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        对多线程开发的理解
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="多线程安全.html">
+            
+                
+                    <a href="./多线程安全.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        多线程安全
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="gcd内部怎么实现的.html">
+            
+                
+                    <a href="./gcd内部怎么实现的.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        gcd内部怎么实现的
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="检查内存管理问题的方式有哪些？.html">
+            
+                
+                    <a href="./检查内存管理问题的方式有哪些？.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        检查内存管理问题的方式有哪些？
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="怎么解决缓存池满的问题.html">
+            
+                
+                    <a href="./怎么解决缓存池满的问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        怎么解决缓存池满的问题(cell)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="补充实用部分.html">
+            
+                
+                    <a href="./补充实用部分.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        补充实用部分
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="ide的介绍.html">
+            
+                
+                    <a href="./ide的介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        ide的介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="coredata.html">
+            
+                
+                    <a href="./coredata.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        coredata
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="iOS6、7、8、9新特性汇总和适配说明.html">
+            
+                
+                    <a href="./iOS6、7、8、9新特性汇总和适配说明.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        iOS6、7、8、9新特性汇总和适配说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="fmdb.html">
+            
+                
+                    <a href="./fmdb.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        SQLite数据库框架--FMDB
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="第三方框架.html">
+            
+                
+                    <a href="./第三方框架.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        第三方框架
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="SDWebImage.html">
+            
+                
+                    <a href="./SDWebImage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        SDWebImage
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="其他.html">
+            
+                
+                    <a href="./其他.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        其他
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="HR人事面试常见问题.html">
+            
+                
+                    <a href="./HR人事面试常见问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        HR人事面试常见问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="pch文件的作用.html">
+            
+                
+                    <a href="./pch文件的作用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        pch文件的作用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="ats.html">
+            
+                
+                    <a href="./ats.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        ATS 应用传输安全(Xcode7之后不能访问网络解决方案)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="xcode_7免证书真机调试.html">
+            
+                
+                    <a href="./xcode_7免证书真机调试.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        Xcode 7免证书真机调试
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >iOS面试宝典</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>&#x6700;&#x8FD1;&#x6709;&#x4E2A;MVVM&#x6A21;&#x5F0F;&#x975E;&#x5E38;&#x706B;&#x70ED;, &#x76F8;&#x4FE1;&#x5B83;&#x7684;&#x51FA;&#x73B0;&#x662F;&#x4E3A;&#x4E86;&#x6A21;&#x5757;&#x5316;iOS&#x5F00;&#x53D1;, &#x5176;&#x5B9E;&#x5728;&#x6211;&#x770B;&#x6765;,&#x5B83;&#x59CB;&#x7EC8;&#x8FD8;&#x662F;MVC&#x6A21;&#x5F0F;, &#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x53D8;&#x79CD;&#x7F62;&#x4E86; .(&#x5F53;&#x7136;&#x6709;&#x4EBA;&#x7528;&#x5230;&#x4E86;&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;&#x7684;&#x601D;&#x8DEF;&#x98A0;&#x8986;&#x4E86;&#x5E38;&#x89C4; , &#x4F46;&#x6211;&#x4EEC;&#x4ECA;&#x5929;&#x628A;&#x8BA8;&#x8BBA;&#x70B9;&#x96C6;&#x4E2D;&#x4E8E;&#x4EE3;&#x7801;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;) .</p>
+<p>&#x4E0E;&#x5176;&#x4E13;&#x6CE8;&#x4E8E;&#x8BF4;&#x660E; MVVM &#x7684;&#x6765;&#x5386;&#xFF0C;&#x4E0D;&#x5982;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684; iOS &#x662F;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x7684;&#xFF0C;&#x5E76;&#x4ECE;&#x90A3;&#x91CC;&#x4E86;&#x89E3;MVVM&#xFF1A;</p>
+<p><img src="MVVM&#x56FE;/1.png" alt="Alt text"></p>
+<p>Typical Model-View-Controller setup</p>
+<p>&#x6211;&#x4EEC;&#x770B;&#x5230;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684; MVC&#x8BBE;&#x7F6E;&#x3002;Model&#x5448;&#x73B0;&#x6570;&#x636E;&#xFF0C;View&#x5448;&#x73B0;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x800C; View Controller&#x8C03;&#x8282;&#x5B83;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#x3002;
+&#x7A0D;&#x5FAE;&#x8003;&#x8651;&#x4E00;&#x4E0B;&#xFF0C;&#x867D;&#x7136;View &#x548C; View Controller&#x662F;&#x6280;&#x672F;&#x4E0A;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x51E0;&#x4E4E;&#x603B;&#x662F;&#x624B;&#x7275;&#x624B;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x6210;&#x5BF9;&#x7684;&#x3002;&#x4F60;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x770B;&#x5230;&#x4E00;&#x4E2A; View&#x80FD;&#x591F;&#x4E0E;&#x4E0D;&#x540C; View Controller&#x914D;&#x5BF9;&#xFF1F;&#x6216;&#x8005;&#x53CD;&#x8FC7;&#x6765;&#xFF1F;&#x6240;&#x4EE5;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x6B63;&#x89C4;&#x5316;&#x5B83;&#x4EEC;&#x7684;&#x8FDE;&#x63A5;&#x5462;&#xFF1F;</p>
+<p><img src="MVVM&#x56FE;/2.png" alt="Alt text"></p>
+<p>Intermediate</p>
+<p>&#x8FD9;&#x66F4;&#x51C6;&#x786E;&#x5730;&#x63CF;&#x8FF0;&#x4E86;&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x7F16;&#x5199;&#x7684; MVC&#x4EE3;&#x7801;&#x3002;&#x4F46;&#x5B83;&#x5E76;&#x6CA1;&#x6709;&#x505A;&#x592A;&#x591A;&#x4E8B;&#x60C5;&#x6765;&#x89E3;&#x51B3;iOS&#x5E94;&#x7528;&#x4E2D;&#x65E5;&#x76CA;&#x589E;&#x957F;&#x7684;&#x91CD;&#x91CF;&#x7EA7;&#x89C6;&#x56FE;&#x63A7;&#x5236;&#x5668;&#x3002;&#x5728;&#x5178;&#x578B;&#x7684; MVC &#x5E94;&#x7528;&#x91CC;&#xFF0C;&#x8BB8;&#x591A;&#x903B;&#x8F91;&#x88AB;&#x653E;&#x5728;View Controller&#x91CC;&#x3002;&#x5B83;&#x4EEC;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x786E;&#x5B9E;&#x5C5E;&#x4E8E;View Controller&#xFF0C;&#x4F46;&#x66F4;&#x591A;&#x7684;&#x662F;&#x6240;&#x8C13;&#x7684;&#x201C;&#x7528;&#x4E8E;&#x663E;&#x793A;&#x7684;&#x903B;&#x8F91;&#x201D;&#xFF0C;&#x4EE5; MVVM &#x5C5E;&#x672F;&#x8BED;&#x6765;&#x8BF4;&#x2014;&#x2014;&#x5C31;&#x662F;&#x90A3;&#x4E9B;&#x4ECE;Model&#x8F6C;&#x6362;&#x6570;&#x636E;&#x4E3A; View&#x53EF;&#x4EE5;&#x5448;&#x73B0;&#x7684;&#x4E1C;&#x897F;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x4F8B;&#x5982;&#x5C06;&#x4E00;&#x4E2A;NSDate &#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x7684; NSString&#x3002;
+&#x6211;&#x4EEC;&#x7684;&#x56FE;&#x89E3;&#x91CC;&#x7F3A;&#x5C11;&#x67D0;&#x4E9B;&#x4E1C;&#x897F;&#x3002;&#x67D0;&#x4E9B;&#x4F7F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x653E;&#x7F6E;&#x6240;&#x6709;&#x8868;&#x793A;&#x903B;&#x8F91;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x6211;&#x4EEC;&#x6253;&#x7B97;&#x5C06;&#x5176;&#x79F0;&#x4E3A;&#x201C;View Model&#x201D;&#x2014;&#x2014;&#x5B83;&#x4F4D;&#x4E8E; View/Controller&#x4E0E; Model&#x4E4B;&#x95F4;&#xFF1A;</p>
+<p><img src="MVVM&#x56FE;/3.png" alt="Alt text">
+Model-View-ViewModel</p>
+<p>&#x770B;&#x8D77;&#x597D;&#x591A;&#x4E86;&#xFF01;&#x8FD9;&#x4E2A;&#x56FE;&#x89E3;&#x51C6;&#x786E;&#x5730;&#x63CF;&#x8FF0;&#x4E86;&#x4EC0;&#x4E48;&#x662F; MVVM&#xFF1A;&#x4E00;&#x4E2A; MVC &#x7684;&#x589E;&#x5F3A;&#x7248;&#xFF0C;&#x6211;&#x4EEC;&#x6B63;&#x5F0F;&#x8FDE;&#x63A5;&#x4E86;&#x89C6;&#x56FE;&#x548C;&#x63A7;&#x5236;&#x5668;&#xFF0C;&#x5E76;&#x5C06;&#x8868;&#x793A;&#x903B;&#x8F91;&#x4ECE; Controller &#x79FB;&#x51FA;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x91CC;&#xFF0C;&#x5373; View Model&#x3002;MVVM &#x542C;&#x8D77;&#x6765;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x5B83;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7CBE;&#x5FC3;&#x4F18;&#x5316;&#x7684; MVC&#x67B6;&#x6784;&#xFF0C;&#x800C; MVC&#x4F60;&#x65E9;&#x5DF2;&#x719F;&#x6089;&#x3002;</p>
+<p>&#x597D;&#x4E86;, &#x5F15;&#x8A00;&#x8BF4;&#x5B8C;&#x4E86;, &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x94FA;&#x57AB; .
+&#x5982;&#x679C;&#x4F60;&#x8BA4;&#x4E3A;&#x4E0B;&#x56FE;&#x53F3;&#x8FB9;&#x7684;&#x65B9;&#x6CD5;&#x5168;&#x90E8;&#x653E;&#x5728;ViewController&#x91CC;&#x4FBF;&#x4E8E;&#x65E5;&#x540E;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x7684;&#x8BDD; . &#x4F60;&#x5927;&#x53EF;&#x56FA;&#x6267;&#x5DF1;&#x89C1;&#x7136;&#x540E;&#x70B9;&#x51FB;&#x6D4F;&#x89C8;&#x5668;&#x53F3;&#x4E0A;&#x89D2;&#x7684;&quot;&#xD7;&quot; ...</p>
+<p><img src="MVVM&#x56FE;/4.png" alt="Alt text"></p>
+<p>&#x5C4F;&#x5E55;&#x5FEB;&#x7167; 2015-12-14 &#x4E0B;&#x5348;3.58.00.png
+&#x5F53;&#x7136;, &#x5173;&#x4E8E;&#x7626;&#x8EAB;ViewController&#x6709;&#x5F88;&#x591A;&#x65B9;&#x9762; . &#x7136;&#x800C;&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x8BB2;&#x8BB2;&#x4ECE;Controller&#x4E2D;&#x5206;&#x79BB;TableView&#x7684;&#x8868;&#x793A;&#x903B;&#x8F91; . &#x4E3A;&#x4EC0;&#x4E48;&#x5F15;&#x8A00;MVVM&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;, &#x4E5F;&#x662F;&#x9610;&#x8FF0;&#x8FD9;&#x4E2A;&#x4E3B;&#x8981;&#x601D;&#x60F3;&#x662F;&#x76F8;&#x901A;&#x7684; . &#x5C31;&#x662F;&#x628A;&quot;&#x903B;&#x8F91;&#x90E8;&#x5206;&quot;&#x5C3D;&#x91CF;&#x79FB;&#x5230;Model&#x5C42;, &#x4F60;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x5C42; , &#x6240;&#x8C13;&quot;&#x903B;&#x8F91;&#x90E8;&#x5206;&quot;&#x53EF;&#x4EE5;&#x662F;&#x5404;&#x79CD;delegate,&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;,&#x7F13;&#x5B58;,&#x6570;&#x636E;&#x5E93;,coredata&#x7B49;&#x7B49;&#x7B49;&#x7B49; , &#x800C;controller&#x6B63;&#x662F;&#x7528;&#x6765;&#x7EC4;&#x7EC7;&#x4E32;&#x8054;&#x4ED6;&#x4EEC; .&#x4F7F;&#x5F97;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x8D70;&#x901A; .</p>
+<p>&#x6B63;&#x6587;
+&#x6211;&#x4EEC;&#x5F88;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#x628A; UITableViewDataSource&#x548C;UITableViewDelegate &#x7684;&#x4EE3;&#x7801;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x7C7B;.
+&#x4F46;&#x6211;&#x53D1;&#x73B0;&#x8FD8;&#x662F;&#x6709;&#x4E1C;&#x897F;&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x51FA;&#x6765; .
+&#x4F8B;&#x5982;cell&#x7684;&#x751F;&#x6210;, cell&#x884C;&#x9AD8;, &#x70B9;&#x51FB;&#x7B49;&#x7B49; .&#x8FD9;&#x91CC;&#x6211;&#x8FD8;&#x7528;&#x4E86;block&#x7684;&#x5F62;&#x5F0F;&#x4F7F;&#x5F97;&#x51FD;&#x6570;&#x80FD;&#x591F;&#x56DE;&#x8C03; . &#x5982;&#x679C;&#x4F60;&#x5BF9;block&#x8FD8;&#x4E0D;&#x592A;&#x4E86;&#x89E3;&#x5148;&#x770B;&#x8FD9;&#x91CC; .
+&#x6B64;&#x5916;, &#x5982;&#x679C;&#x4F60;&#x4E5F;&#x91CD;&#x5EA6;&#x4F7F;&#x7528;.xib&#x751F;&#x6210;Cell, &#x90A3;&#x548C;&#x6211;&#x5C01;&#x88C5;&#x7684;&#x7C7B;&#x4F1A;&#x975E;&#x5E38;&#x5951;&#x5408; .
+&#x8BB0;&#x4F4F;&#x6211;&#x9ED8;&#x8BA4;&#x4E60;&#x60EF;&#x7528;.xib&#x524D;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x6765;&#x5B9A;&#x4E49;cell&#x7684;Identifier. &#x5982;&#x679C;&#x4F60;&#x60F3;&#x628A;&#x5B83;&#x7528;&#x4E8E;&#x5B9E;&#x6218;, &#x8BB0;&#x5F97;&#x5728;xib&#x8BBE;&#x7F6E;cell&#x7684;Identifier&#x4E0D;&#x8981;&#x8BBE;&#x9519;.</p>
+<p>&#x5904;&#x7406;&#x7C7B;<code>XTTableDataDelegate</code>&#x7684;<code>.h</code></p>
+<pre><code>#import &lt;Foundation/Foundation.h&gt;
+#import &lt;UIKit/UIKit.h&gt;
+
+typedef void    (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, XTRootCustomCell *cell) ;
+typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
+typedef void    (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+
+@interface XTTableDataDelegate : NSObject &lt;UITableViewDelegate,UITableViewDataSource&gt;
+//1
+- (id)initWithItems:(NSArray *)anItems
+     cellIdentifier:(NSString *)aCellIdentifier
+ configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
+    cellHeightBlock:(CellHeightBlock)aHeightBlock
+     didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+//2
+- (void)handleTableViewDatasourceAndDelegate:(UITableView *)table ;
+//3
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
+
+@end
+</code></pre><p>&#x6CE8;&#x91CA;: //1. &#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;: &#x4F20;&#x6570;&#x636E;&#x6E90;, cellIdentifier, &#x4E09;&#x4E2A;block&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x914D;&#x7F6E;, &#x884C;&#x9AD8;, &#x70B9;&#x51FB; .
+//2. &#x5C06;UITableViewDataSource&#x548C;UITableViewDelegate&#x8BBE;&#x4E8E;XTTableDataDelegate
+//3. &#x9ED8;&#x8BA4;indexPath.row&#x5BF9;&#x5E94;&#x6BCF;&#x4E2A;dataSource .&#x76F8;&#x5E94;&#x8FD4;&#x56DE;item</p>
+<p>&#x6B64;&#x5916;, &#x4E3A;&#x4E86;&#x66F4;&#x5F7B;&#x5E95;, &#x6709;&#x5FC5;&#x8981;&#x62BD;&#x8C61;&#x51FA;&quot;&#x6839;Cell&quot; .&#x4F46;&#x8FD9;&#x6837;&#x4E0D;&#x5229;&#x4E8E;&#x6269;&#x5C55;cell . &#x4E3A;&#x4E86;&#x907F;&#x5F00;model&#x548C;view&#x7684;&#x8026;&#x5408;. &#x6240;&#x4EE5;&#x4F7F;&#x7528;category&#x6765;&#x505A;&#x7C7B;&#x7684;&#x6269;&#x5C55; .</p>
+<pre><code>
+#import &lt;UIKit/UIKit.h&gt;
+
+@interface UITableViewCell (Extension)
+
++ (void)registerTable:(UITableView *)table
+        nibIdentifier:(NSString *)identifier ;
+
+- (void)configure:(UITableViewCell *)cell
+        customObj:(id)obj
+        indexPath:(NSIndexPath *)indexPath ;
+
++ (CGFloat)getCellHeightWithCustomObj:(id)obj
+                            indexPath:(NSIndexPath *)indexPath ;
+
+@end
+</code></pre><p>&#x6545;UITableViewCell+Extension, &#x901A;&#x8FC7;&#x7C7B;&#x7684;&#x6269;&#x5C55;&#x6765;&#x5B9E;&#x73B0;&#x65B0;Cell .
+&#x6CE8;&#x91CA;: //1 .&#x4E0D;&#x89E3;&#x91CA;.
+//2. &#x6839;&#x636E;&#x6570;&#x636E;&#x6E90;&#x914D;&#x7F6E;&#x5E76;&#x7ED8;&#x5236;cell &#x5B50;&#x7C7B;&#x52A1;&#x5FC5;&#x91CD;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;
+//3. &#x6839;&#x636E;&#x6570;&#x636E;&#x6E90;&#x8BA1;&#x7B97;cell&#x7684;&#x9AD8;&#x5EA6; &#x5B50;&#x7C7B;&#x53EF;&#x91CD;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;, &#x82E5;&#x4E0D;&#x5199;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;44.0</p>
+<pre><code>#pragma mark - Public
++ (void)registerTable:(UITableView *)table
+        nibIdentifier:(NSString *)identifier
+{
+    [table registerNib:[self nibWithIdentifier:identifier] forCellReuseIdentifier:identifier] ;
+}
+
+#pragma mark --
+#pragma mark - Rewrite these func in SubClass !
+- (void)configure:(UITableViewCell *)cell
+        customObj:(id)obj
+        indexPath:(NSIndexPath *)indexPath
+{
+    // Rewrite this func in SubClass !
+
+}
+
++ (CGFloat)getCellHeightWithCustomObj:(id)obj
+                            indexPath:(NSIndexPath *)indexPath
+{
+    // Rewrite this func in SubClass if necessary
+    if (!obj) {
+        return 0.0f ; // if obj is null .
+    }
+    return 44.0f ; // default cell height
+}
+</code></pre><p>&#x90A3;&#x4E48;&#x65B0;cell&#x7C7B;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;: &#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x65B0;&#x65B9;&#x6CD5;</p>
+<pre><code>- (void)configure:(UITableViewCell *)cell
+        customObj:(id)obj
+        indexPath:(NSIndexPath *)indexPath
+{
+    MyObj *myObj = (MyObj *)obj ;
+    MyCell *mycell = (MyCell *)cell ;
+    mycell.lbTitle.text = myObj.name ;
+    mycell.lbHeight.text = [NSString stringWithFormat:@&quot;my Height is : %@&quot;, @(myObj.height)] ;
+    cell.backgroundColor = indexPath.row % 2 ? [UIColor greenColor] : [UIColor brownColor] ;
+}
+
++ (CGFloat)getCellHeightWithCustomObj:(id)obj
+                            indexPath:(NSIndexPath *)indexPath
+{
+    return ((MyObj *)obj).height ;
+}
+</code></pre><p>&#x770B;&#x4E0B;&#x7ED3;&#x679C;, &#x7626;&#x8EAB;&#x540E;&#x7684;controller&#x5E72;&#x51C0;&#x7684;&#x4E0D;&#x50CF;&#x5B9E;&#x529B;&#x6D3E;, &#x53EA;&#x5269;&#x4E0B;&#x4E86;&#x8FD9;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; .&#x5475;&#x5475;&#x5475;&#x5475; .</p>
+<pre><code>- (void)setupTableView
+{
+    self.table.separatorStyle = 0 ;
+
+    TableViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, MyObj *obj, XTRootCustomCell *cell) {
+        [cell configure:cell customObj:obj indexPath:indexPath] ;
+    } ;
+
+    CellHeightBlock heightBlock = ^CGFloat(NSIndexPath *indexPath, id item) {
+        return [MyCell getCellHeightWithCustomObj:item indexPath:indexPath] ;
+    } ;
+
+    DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
+        NSLog(@&quot;click row : %@&quot;,@(indexPath.row)) ;
+    } ;
+
+    self.tableHander = [[XTTableDataDelegate alloc] initWithItems:self.list
+                                                   cellIdentifier:MyCellIdentifier
+                                               configureCellBlock:configureCell
+                                                  cellHeightBlock:heightBlock
+                                                   didSelectBlock:selectedBlock] ;
+
+    [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
+}
+</code></pre><p>&#x8BF8;&#x591A;.m&#x6587;&#x4EF6;&#x592A;&#x8FC7;&#x4E8E;&#x5197;&#x957F;,&#x6211;&#x5C31;&#x4E0D;&#x8D34;&#x5230;&#x535A;&#x5BA2;&#x4E86;, &#x535A;&#x5BA2;&#x4E3B;&#x8981;&#x662F;&#x8BB2;&#x601D;&#x8DEF;, &#x601D;&#x8DEF;&#x662F;&#x738B;&#x9053; .</p>
+<p>&#x51FA;&#x5904;@TEASON</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./描述什么是MVC.html" class="navigation navigation-prev " aria-label="Previous page: 描述什么是MVC"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./frame与bounds.html" class="navigation navigation-next " aria-label="Next page: frame与bounds"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
