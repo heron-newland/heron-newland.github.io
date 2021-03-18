@@ -14,7 +14,7 @@ tags:
 
 **没使用`Tagged Pointer`时**
 
-![tagged_pointer1](/Users/longhe/Documents/Blog/heron-newland.github.io/docs/assets/images/tagged_pointer1.png)
+![tagged_pointer1](/assets/images/tagged_pointer1.png)
 
 **使用`Tagged Pointer`时**
 
