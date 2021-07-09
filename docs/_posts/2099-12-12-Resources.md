@@ -12,6 +12,8 @@ tags:
 
 <!--more-->
 
+[macOS无法安装app的解决办法](https://www.macbl.com/article/how-to/1387)
+
 ### iOS开发学习资源
 
 [Swift语言写的第三方框架集合(awesome-swift)](https://github.com/matteocrippa/awesome-swift)
