@@ -64,6 +64,8 @@ tags:
 
 ### 高质量的常用第三方库
 
+[JXCategoryView](https://github.com/pujiaxin33/JXCategoryView)一个两级联动的框架
+
 [Alamofire-Swift-网络请求](https://github.com/Alamofire/Alamofire)
 
 [Moya-Swift-网络请求](https://github.com/Moya/Moya)
@@ -209,6 +211,7 @@ tags:
 [MJExtension-OC-字典转模型](https://github.com/CoderMJLee/MJExtension)
 
 [Charts-Swift-图表(折线图, 条形图, 饼图等)绘制](https://github.com/danielgindi/Charts)
+
 ### UI/UX
 
 [Material-能创建更好看的UI框架](https://github.com/CosmicMind/Material)
