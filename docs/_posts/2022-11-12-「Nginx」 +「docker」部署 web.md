@@ -1,8 +1,16 @@
-「Nginx」 +「docker」部署 web
+---
+layout: post
+title:  "「Nginx」 +「docker」部署 web"
+date:   2022-11-12
+categories:
+ - Turorial
+tags:
+ - Skills
+---
 
 
 
-#### [部署Docker](https://help.aliyun.com/document_detail/51853.html)
+## [部署Docker](https://help.aliyun.com/document_detail/51853.html)
 
 本节主要介绍手动安装Docker的操作步骤，您也可以在[云市场](https://market.aliyun.com/software)购买相应镜像，一键部署云服务器。
 
