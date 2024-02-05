@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "go build打包生成不同系统下的运行可执行文件exe"
+date:   2022-01-16
+categories:
+ - Turorial
+tags:
+ - Skills
+---
+
 ### go build打包生成不同系统下的运行可执行文件exe
 
 

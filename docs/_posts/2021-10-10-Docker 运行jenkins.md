@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "Docker运行jenkins"
+date:   2022-10-10
+categories:
+ - Turorial
+tags:
+ - Skills
+---
+
 ### Docker运行jenkins
 
 ### 使用docker安装jenkins
